@@ -1,19 +1,22 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default bg-light sticky-top">
     <div class="container-fluid">
-        <ul class="nav navbar-nav">
-            <li routerLinkActive="active">
-                <a routerLink="books">Livres</a>
+        <ul class="nav navbar-nav navbar-expand">
+            <li routerLinkActive="active" class="pr-3 nav-item">
+                <a routerLink="books">Books</a>
+            </li>
+            <li routerLinkActive="active" *ngIf="isAuth" class="border-left pl-3 nav-item">
+                <a routerLink="books/new">New book</a>
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li routerLinkActive="active" *ngIf="!isAuth">
-                <a routerLink="auth/signup">Créer un compte</a>
+                <a routerLink="auth/signup">Signup</a>
             </li>
             <li routerLinkActive="active" *ngIf="!isAuth">
-                <a routerLink="auth/signin">Connexion</a>
+                <a routerLink="auth/signin">Login</a>
             </li>
             <li>
-                <a (click)="onSignOut()" style="cursor:pointer" *ngIf="isAuth">Déconnexion</a>
+                <a (click)="onSignOut()" style="cursor:pointer" *ngIf="isAuth">Logout</a>
             </li>
         </ul>
     </div>
