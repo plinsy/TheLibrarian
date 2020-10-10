@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class BooksComponent implements OnInit, OnDestroy {
 
+  title: string = "Loading your books...";
   books: Book[];
   bookSubscription: Subscription;
 
@@ -21,6 +22,12 @@ export class BooksComponent implements OnInit, OnDestroy {
       (books: Book[]) => {
         this.books = books;        
       }
+    )
+
+    setTimeout(
+      () => {
+        this.title = "Your books";
+      }, 3000
     )
 
     this.booksService.emitBooks();
