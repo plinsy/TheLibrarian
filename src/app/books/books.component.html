@@ -1,1 +1,19 @@
-<p>books works!</p>
+<div class="row">
+    <div class="col-xs-12">
+        <h2>Vos livres</h2>
+        <div class="row w-100 m-0">
+            <li class="border rounded list-group-item col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let book of books; let i = index">
+                <button class="float-right btn btn-outline-danger" (click)="onDeleteBook(book)">
+                    <span class="glyphicon glyphicon-minus">remove</span>
+                </button>
+                <button class="btn" (click)="onViewBook(i)">
+                    <h3 class="list-group-item-heading">
+                        {{ book.title }}
+                    </h3>
+                    <p class="list-group-item-text">{{ book.author }}</p>
+                </button>
+            </li>
+        </div>
+        <button class="btn btn-primary mt-3" (click)="onNewBook()">Nouveau livre</button>
+    </div>
+</div>

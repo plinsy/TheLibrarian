@@ -1,1 +1,13 @@
-<p>book-show works!</p>
+<div class="row" *ngIf="book">
+    <div class="col-xs-12">
+        <h1>{{ book.title }}</h1>
+        <div class="media">
+            <img style="max-width: 150px; min-width: 150px; min-height: 150px;" [src]="book.photo" alt="book-photo" *ngIf="book.photo" class="bg-light">
+            <div class="media-body ml-3">
+                <h3>written by {{ book.author }}</h3>
+                <p>{{ book.synopsis }}</p>
+            </div>
+        </div>
+        <button class="btn btn-default" (click)="onBack()">Retour</button>
+    </div>
+</div>
