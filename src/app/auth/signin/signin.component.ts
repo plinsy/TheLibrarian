@@ -1,4 +1,7 @@
+import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -7,9 +10,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SigninComponent implements OnInit {
 
-  constructor() { }
+  signinForm: FormGroup;
+  errorMessage: string;
+
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
+    this.initForm()
+  }
+
+  initForm() {
+    this.signinForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.pattern(/[0-9a-zA-Z]{6,}/)]],
+    })
+  }
+
+  onSubmit() {
+    const { email, password } = this.signinForm.value;
+
+    this.authService.signInUser(email, password)
+      .then(
+        () => {
+          this.router.navigate(['/books'])
+        }
+      )
+      .catch(
+        (error) => {
+          this.errorMessage = error
+        }
+      )
   }
 
 }
