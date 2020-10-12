@@ -1,4 +1,6 @@
-language: "nodejs"
+language: node_js
+node_js:
+  - 14
 deploy:
   provider: heroku
   api_key:
