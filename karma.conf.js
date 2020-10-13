@@ -27,9 +27,6 @@ module.exports = function(config) {
         autoWatch: true,
         browsers: [
             'Chrome',
-            'Firefox',
-            'Chromium',
-            'Opera',
         ],
         singleRun: false,
         restartOnFileChange: true
