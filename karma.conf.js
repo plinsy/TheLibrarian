@@ -33,7 +33,7 @@ module.exports = function(config) {
         logLevel: config.LOG_INFO,
         autoWatch: true,
         browsers: [
-            ChromeHeadlessNoSandbox
+            customLaunchers.ChromeHeadlessNoSandbox
         ],
         singleRun: false,
         restartOnFileChange: true
