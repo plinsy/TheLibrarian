@@ -19,7 +19,7 @@ describe('BookNewComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  // it('should have a bookForm', () => {
+  //   expect(component.bookForm).toBeDefined();
+  // });
 });

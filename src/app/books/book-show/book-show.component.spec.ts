@@ -19,7 +19,7 @@ describe('BookShowComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  // it('should should have a book', () => {
+  //   expect(component.book).toBeDefined();
+  // });
 });
