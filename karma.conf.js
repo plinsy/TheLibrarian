@@ -3,6 +3,7 @@
 
 const customLaunchers = {
     ChromeHeadlessNoSandbox: {
+        name: "Chrome",
         base: 'ChromeHeadless',
         flags: ['--no-sandbox'],
     }
